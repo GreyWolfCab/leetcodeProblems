@@ -8,14 +8,14 @@ public class DecryptIntegerToAlphabet {
 
     public static String freqAlphabets(String s) {
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();//StringBuilders are efficient with many appends
 
-        for (int i = 0; i < s.length(); i++) {
-            if ((i+2) < s.length() && s.charAt(i+2) == '#') {
-                sb.append((char) (96 + Integer.parseInt(s.substring(i, i+2))));
-                i += 2;
+        for (int i = 0; i < s.length(); i++) {//iterate through the string
+            if ((i+2) < s.length() && s.charAt(i+2) == '#') {//check for a two digit value
+                sb.append((char) (96 + Integer.parseInt(s.substring(i, i+2))));//convert the char to a int then to char
+                i += 2;//move to next possible value
             } else {
-                sb.append((char) (96 + Integer.parseInt(s.substring(i, i+1))));
+                sb.append((char) (96 + Integer.parseInt(s.substring(i, i+1))));//convert the char to a int then to char
             }
         }
 
